@@ -1,14 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+var createError  = require('http-errors');
+var express      = require('express');
+var path         = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger       = require('morgan');
+var env          = require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter   = require('./routes/api');
 
-var swaggerUi = require('swagger-ui-express');
+var swaggerUi       = require('swagger-ui-express');
 var swaggerDocument = require('./swagger.js');
 
 var app = express();
