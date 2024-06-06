@@ -53,4 +53,40 @@ router.get('/data/book_list', dataController.bookList);
 
 router.get('/data/member_list', dataController.memberList);
 
+/**
+ * @swagger
+ * /api/borrwing_book/create:
+ *   post:
+ *     summary: Create borrowing books.
+ *     responses:
+ *       201:
+ *         description: Created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     member_id:
+ *                       type: integer
+ *                       description: The member id (/api/data/member_list).
+ *                       example: 0
+ *                     book_ids:
+ *                       type: json
+ *                       description: The book ids (/api/data/book_id).
+ *                       example: {1,2}
+ *                     start_date:
+ *                       type: date
+ *                       description: The start date borrowing.
+ *                       example: Y-m-d
+ *                     end_date:
+ *                       type: date
+ *                       description: The start date end_date.
+ *                       example: Y-m-d
+*/
+
+router.post('/borrwing_book/create', dataController.memberList);
+
 module.exports = router;
