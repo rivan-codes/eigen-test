@@ -15,16 +15,30 @@ Pastikan Anda telah menginstal PHP, Composer, dan telah menyiapkan database MySQ
 ### Langkah-langkah Instalasi
 1. Clone repositori ini ke dalam direktori lokal:
 2. Install dependencies menggunakan Composer:
+```
 composer install
+```
 3. Salin file `.env.example` ke `.env` dan sesuaikan konfigurasi database:
+```
 cp .env.example .env
 php artisan key
+```
 4. Buat database kosong dengan nama yang sesuai di MySQL.
 5. Konfigurasi `.env` dengan detail database Anda:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database_anda
+DB_USERNAME=username_database_anda
+DB_PASSWORD=password_database_anda
+```
 6. Lakukan migrasi database untuk membuat tabel yang diperlukan:
-php artisan migrate
+`php artisan migrate`
 7. (Opsional) Jalankan seeder untuk memasukkan data default perusahaan:
+```
 php artisan db --class=CompanySeeder
+```
 8. Serve aplikasi menggunakan server lokal:
 
 9. Buka browser dan akses `http://localhost:8000` untuk melihat website.
